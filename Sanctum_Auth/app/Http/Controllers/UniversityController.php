@@ -1,13 +1,10 @@
 <?php
-
 namespace App\Http\Controllers;
 use App\Models\University;
 use Illuminate\Http\Request;
 use App\Http\Requests\AuthRequest;
 use App\Http\Requests\LoginRequest;
 use Illuminate\Support\Facades\Hash;
-
-
 class UniversityController extends Controller
 {
     public function register(AuthRequest $request)
