@@ -15,8 +15,8 @@ class ProfileController extends Controller
             return redirect('/login');
         }
 
-        $jwtDecoder = new JwtDecoder(); 
-        $user = $jwtDecoder->getUserFromToken($token);
+        $decode = new JwtDecoder();
+        $user = $decode->getUserFromToken($token);
 
         if (!$user) {
             return redirect('/login')->withErrors(['Invalid or expired token']);

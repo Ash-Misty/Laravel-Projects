@@ -44,17 +44,17 @@ class LoginController extends Controller
             'exp' => time() + 60 * 60 // 1 hour expiration
         ];
 
-       
-     
+
+
 
         // Encode the token
         $jwt = JWT::encode($payload, env('JWT_SECRET'), 'HS256');
 
         // Redirect with cookie
         return redirect('/home')->cookie(
-            'jwt_token', $jwt, 60, 
-            null, null,          
-            false, true                
+            'jwt_token', $jwt, 60,
+            null, null,
+            false, true
         );
     }
 
